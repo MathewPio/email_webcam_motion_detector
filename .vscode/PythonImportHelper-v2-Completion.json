@@ -1,5 +1,31 @@
 [
     {
+        "label": "smtplib",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "smtplib",
+        "description": "smtplib",
+        "detail": "smtplib",
+        "documentation": {}
+    },
+    {
+        "label": "filetype",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "filetype",
+        "description": "filetype",
+        "detail": "filetype",
+        "documentation": {}
+    },
+    {
+        "label": "EmailMessage",
+        "importPath": "email.message",
+        "description": "email.message",
+        "isExtraImport": true,
+        "detail": "email.message",
+        "documentation": {}
+    },
+    {
         "label": "cv2",
         "kind": 6,
         "isExtraImport": true,
@@ -18,11 +44,64 @@
         "documentation": {}
     },
     {
+        "label": "send_email",
+        "importPath": "emailing",
+        "description": "emailing",
+        "isExtraImport": true,
+        "detail": "emailing",
+        "documentation": {}
+    },
+    {
+        "label": "glob",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "glob",
+        "description": "glob",
+        "detail": "glob",
+        "documentation": {}
+    },
+    {
+        "label": "send_email",
+        "kind": 2,
+        "importPath": "emailing",
+        "description": "emailing",
+        "peekOfCode": "def send_email(image_path):\n    email_message = EmailMessage()\n    email_message[\"subject\"] = \"New customer showed up!\"\n    email_message.set_content(\"Hey, We just saw a new customer!\")\n    with open(image_path, \"rb\") as file:\n        content = file.read()\n    kind = filetype.guess(content)\n    if kind:\n        email_message.add_attachment(\n            content,",
+        "detail": "emailing",
+        "documentation": {}
+    },
+    {
+        "label": "SENDER",
+        "kind": 5,
+        "importPath": "emailing",
+        "description": "emailing",
+        "peekOfCode": "SENDER = \"oseghaleokononfua@gmail.com\"\nPASSWORD = \"apniqkhftfrlcnzg\"\nRECEIVER = \"oseghaleokononfua@gmail.com\"\ndef send_email(image_path):\n    email_message = EmailMessage()\n    email_message[\"subject\"] = \"New customer showed up!\"\n    email_message.set_content(\"Hey, We just saw a new customer!\")\n    with open(image_path, \"rb\") as file:\n        content = file.read()\n    kind = filetype.guess(content)",
+        "detail": "emailing",
+        "documentation": {}
+    },
+    {
+        "label": "PASSWORD",
+        "kind": 5,
+        "importPath": "emailing",
+        "description": "emailing",
+        "peekOfCode": "PASSWORD = \"apniqkhftfrlcnzg\"\nRECEIVER = \"oseghaleokononfua@gmail.com\"\ndef send_email(image_path):\n    email_message = EmailMessage()\n    email_message[\"subject\"] = \"New customer showed up!\"\n    email_message.set_content(\"Hey, We just saw a new customer!\")\n    with open(image_path, \"rb\") as file:\n        content = file.read()\n    kind = filetype.guess(content)\n    if kind:",
+        "detail": "emailing",
+        "documentation": {}
+    },
+    {
+        "label": "RECEIVER",
+        "kind": 5,
+        "importPath": "emailing",
+        "description": "emailing",
+        "peekOfCode": "RECEIVER = \"oseghaleokononfua@gmail.com\"\ndef send_email(image_path):\n    email_message = EmailMessage()\n    email_message[\"subject\"] = \"New customer showed up!\"\n    email_message.set_content(\"Hey, We just saw a new customer!\")\n    with open(image_path, \"rb\") as file:\n        content = file.read()\n    kind = filetype.guess(content)\n    if kind:\n        email_message.add_attachment(",
+        "detail": "emailing",
+        "documentation": {}
+    },
+    {
         "label": "video",
         "kind": 5,
         "importPath": "main",
         "description": "main",
-        "peekOfCode": "video = cv2.VideoCapture(0)\ntime.sleep(1)\nfirst_frame = None\nwhile True:\n    check, frame = video.read()\n    gray_frame = cv2.cvtColor(frame, cv2.COLOR_BGR2GRAY)\n    gray_frame_gau = cv2.GaussianBlur(gray_frame, (21, 21), 0)\n    if first_frame is None:\n        first_frame = gray_frame_gau\n    delta_frame = cv2.absdiff(first_frame, gray_frame_gau)",
+        "peekOfCode": "video = cv2.VideoCapture(0)\ntime.sleep(1)\nfirst_frame = None\nstatus_list = []\ncount = 1\nwhile True:\n    status = 0\n    check, frame = video.read()\n    gray_frame = cv2.cvtColor(frame, cv2.COLOR_BGR2GRAY)\n    gray_frame_gau = cv2.GaussianBlur(gray_frame, (21, 21), 0)",
         "detail": "main",
         "documentation": {}
     },
@@ -31,7 +110,25 @@
         "kind": 5,
         "importPath": "main",
         "description": "main",
-        "peekOfCode": "first_frame = None\nwhile True:\n    check, frame = video.read()\n    gray_frame = cv2.cvtColor(frame, cv2.COLOR_BGR2GRAY)\n    gray_frame_gau = cv2.GaussianBlur(gray_frame, (21, 21), 0)\n    if first_frame is None:\n        first_frame = gray_frame_gau\n    delta_frame = cv2.absdiff(first_frame, gray_frame_gau)\n    thresh_frame = cv2.threshold(delta_frame, 60, 255, cv2.THRESH_BINARY)[1]\n    dil_frame = cv2.dilate(thresh_frame, None, iterations=2)",
+        "peekOfCode": "first_frame = None\nstatus_list = []\ncount = 1\nwhile True:\n    status = 0\n    check, frame = video.read()\n    gray_frame = cv2.cvtColor(frame, cv2.COLOR_BGR2GRAY)\n    gray_frame_gau = cv2.GaussianBlur(gray_frame, (21, 21), 0)\n    if first_frame is None:\n        first_frame = gray_frame_gau",
+        "detail": "main",
+        "documentation": {}
+    },
+    {
+        "label": "status_list",
+        "kind": 5,
+        "importPath": "main",
+        "description": "main",
+        "peekOfCode": "status_list = []\ncount = 1\nwhile True:\n    status = 0\n    check, frame = video.read()\n    gray_frame = cv2.cvtColor(frame, cv2.COLOR_BGR2GRAY)\n    gray_frame_gau = cv2.GaussianBlur(gray_frame, (21, 21), 0)\n    if first_frame is None:\n        first_frame = gray_frame_gau\n    delta_frame = cv2.absdiff(first_frame, gray_frame_gau)",
+        "detail": "main",
+        "documentation": {}
+    },
+    {
+        "label": "count",
+        "kind": 5,
+        "importPath": "main",
+        "description": "main",
+        "peekOfCode": "count = 1\nwhile True:\n    status = 0\n    check, frame = video.read()\n    gray_frame = cv2.cvtColor(frame, cv2.COLOR_BGR2GRAY)\n    gray_frame_gau = cv2.GaussianBlur(gray_frame, (21, 21), 0)\n    if first_frame is None:\n        first_frame = gray_frame_gau\n    delta_frame = cv2.absdiff(first_frame, gray_frame_gau)\n    thresh_frame = cv2.threshold(delta_frame, 60, 255, cv2.THRESH_BINARY)[1]",
         "detail": "main",
         "documentation": {}
     }
