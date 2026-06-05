@@ -1,0 +1,38 @@
+[
+    {
+        "label": "cv2",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "cv2",
+        "description": "cv2",
+        "detail": "cv2",
+        "documentation": {}
+    },
+    {
+        "label": "time",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "time",
+        "description": "time",
+        "detail": "time",
+        "documentation": {}
+    },
+    {
+        "label": "video",
+        "kind": 5,
+        "importPath": "main",
+        "description": "main",
+        "peekOfCode": "video = cv2.VideoCapture(0)\ntime.sleep(1)\nfirst_frame = None\nwhile True:\n    check, frame = video.read()\n    gray_frame = cv2.cvtColor(frame, cv2.COLOR_BGR2GRAY)\n    gray_frame_gau = cv2.GaussianBlur(gray_frame, (21, 21), 0)\n    if first_frame is None:\n        first_frame = gray_frame_gau\n    delta_frame = cv2.absdiff(first_frame, gray_frame_gau)",
+        "detail": "main",
+        "documentation": {}
+    },
+    {
+        "label": "first_frame",
+        "kind": 5,
+        "importPath": "main",
+        "description": "main",
+        "peekOfCode": "first_frame = None\nwhile True:\n    check, frame = video.read()\n    gray_frame = cv2.cvtColor(frame, cv2.COLOR_BGR2GRAY)\n    gray_frame_gau = cv2.GaussianBlur(gray_frame, (21, 21), 0)\n    if first_frame is None:\n        first_frame = gray_frame_gau\n    delta_frame = cv2.absdiff(first_frame, gray_frame_gau)\n    thresh_frame = cv2.threshold(delta_frame, 60, 255, cv2.THRESH_BINARY)[1]\n    dil_frame = cv2.dilate(thresh_frame, None, iterations=2)",
+        "detail": "main",
+        "documentation": {}
+    }
+]
