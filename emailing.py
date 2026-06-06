@@ -7,6 +7,7 @@ PASSWORD = "apniqkhftfrlcnzg"
 RECEIVER = "oseghaleokononfua@gmail.com"
 
 def send_email(image_path):
+    print("send email function started")
     email_message = EmailMessage()
     email_message["subject"] = "New customer showed up!"
     email_message.set_content("Hey, We just saw a new customer!")
@@ -29,8 +30,9 @@ def send_email(image_path):
     gmail.login(SENDER, PASSWORD)
     gmail.sendmail(SENDER, RECEIVER, email_message.as_string())
     gmail.quit()
+    print("send email func ended")
             
    
 if __name__ == "__main__":
-    send_email(image_path="images/14.png")
+    pass
    

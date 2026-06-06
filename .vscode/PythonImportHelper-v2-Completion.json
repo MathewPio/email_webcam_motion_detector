@@ -44,14 +44,6 @@
         "documentation": {}
     },
     {
-        "label": "send_email",
-        "importPath": "emailing",
-        "description": "emailing",
-        "isExtraImport": true,
-        "detail": "emailing",
-        "documentation": {}
-    },
-    {
         "label": "glob",
         "kind": 6,
         "isExtraImport": true,
@@ -70,11 +62,27 @@
         "documentation": {}
     },
     {
+        "label": "Thread",
+        "importPath": "threading",
+        "description": "threading",
+        "isExtraImport": true,
+        "detail": "threading",
+        "documentation": {}
+    },
+    {
+        "label": "send_email",
+        "importPath": "emailing",
+        "description": "emailing",
+        "isExtraImport": true,
+        "detail": "emailing",
+        "documentation": {}
+    },
+    {
         "label": "send_email",
         "kind": 2,
         "importPath": "emailing",
         "description": "emailing",
-        "peekOfCode": "def send_email(image_path):\n    email_message = EmailMessage()\n    email_message[\"subject\"] = \"New customer showed up!\"\n    email_message.set_content(\"Hey, We just saw a new customer!\")\n    with open(image_path, \"rb\") as file:\n        content = file.read()\n    kind = filetype.guess(content)\n    if kind:\n        email_message.add_attachment(\n            content,",
+        "peekOfCode": "def send_email(image_path):\n    print(\"send email function started\")\n    email_message = EmailMessage()\n    email_message[\"subject\"] = \"New customer showed up!\"\n    email_message.set_content(\"Hey, We just saw a new customer!\")\n    with open(image_path, \"rb\") as file:\n        content = file.read()\n    kind = filetype.guess(content)\n    if kind:\n        email_message.add_attachment(",
         "detail": "emailing",
         "documentation": {}
     },
@@ -83,7 +91,7 @@
         "kind": 5,
         "importPath": "emailing",
         "description": "emailing",
-        "peekOfCode": "SENDER = \"oseghaleokononfua@gmail.com\"\nPASSWORD = \"apniqkhftfrlcnzg\"\nRECEIVER = \"oseghaleokononfua@gmail.com\"\ndef send_email(image_path):\n    email_message = EmailMessage()\n    email_message[\"subject\"] = \"New customer showed up!\"\n    email_message.set_content(\"Hey, We just saw a new customer!\")\n    with open(image_path, \"rb\") as file:\n        content = file.read()\n    kind = filetype.guess(content)",
+        "peekOfCode": "SENDER = \"oseghaleokononfua@gmail.com\"\nPASSWORD = \"apniqkhftfrlcnzg\"\nRECEIVER = \"oseghaleokononfua@gmail.com\"\ndef send_email(image_path):\n    print(\"send email function started\")\n    email_message = EmailMessage()\n    email_message[\"subject\"] = \"New customer showed up!\"\n    email_message.set_content(\"Hey, We just saw a new customer!\")\n    with open(image_path, \"rb\") as file:\n        content = file.read()",
         "detail": "emailing",
         "documentation": {}
     },
@@ -92,7 +100,7 @@
         "kind": 5,
         "importPath": "emailing",
         "description": "emailing",
-        "peekOfCode": "PASSWORD = \"apniqkhftfrlcnzg\"\nRECEIVER = \"oseghaleokononfua@gmail.com\"\ndef send_email(image_path):\n    email_message = EmailMessage()\n    email_message[\"subject\"] = \"New customer showed up!\"\n    email_message.set_content(\"Hey, We just saw a new customer!\")\n    with open(image_path, \"rb\") as file:\n        content = file.read()\n    kind = filetype.guess(content)\n    if kind:",
+        "peekOfCode": "PASSWORD = \"apniqkhftfrlcnzg\"\nRECEIVER = \"oseghaleokononfua@gmail.com\"\ndef send_email(image_path):\n    print(\"send email function started\")\n    email_message = EmailMessage()\n    email_message[\"subject\"] = \"New customer showed up!\"\n    email_message.set_content(\"Hey, We just saw a new customer!\")\n    with open(image_path, \"rb\") as file:\n        content = file.read()\n    kind = filetype.guess(content)",
         "detail": "emailing",
         "documentation": {}
     },
@@ -101,7 +109,7 @@
         "kind": 5,
         "importPath": "emailing",
         "description": "emailing",
-        "peekOfCode": "RECEIVER = \"oseghaleokononfua@gmail.com\"\ndef send_email(image_path):\n    email_message = EmailMessage()\n    email_message[\"subject\"] = \"New customer showed up!\"\n    email_message.set_content(\"Hey, We just saw a new customer!\")\n    with open(image_path, \"rb\") as file:\n        content = file.read()\n    kind = filetype.guess(content)\n    if kind:\n        email_message.add_attachment(",
+        "peekOfCode": "RECEIVER = \"oseghaleokononfua@gmail.com\"\ndef send_email(image_path):\n    print(\"send email function started\")\n    email_message = EmailMessage()\n    email_message[\"subject\"] = \"New customer showed up!\"\n    email_message.set_content(\"Hey, We just saw a new customer!\")\n    with open(image_path, \"rb\") as file:\n        content = file.read()\n    kind = filetype.guess(content)\n    if kind:",
         "detail": "emailing",
         "documentation": {}
     },
@@ -110,7 +118,7 @@
         "kind": 2,
         "importPath": "main",
         "description": "main",
-        "peekOfCode": "def clean_folder():\n    images = glob.glob(\"images/*.png\")\n    for image in images:\n        os.remove(image)\nwhile True:\n    status = 0\n    check, frame = video.read()\n    gray_frame = cv2.cvtColor(frame, cv2.COLOR_BGR2GRAY)\n    gray_frame_gau = cv2.GaussianBlur(gray_frame, (21, 21), 0)\n    if first_frame is None:",
+        "peekOfCode": "def clean_folder():\n    print(\"clean folder func started\")\n    # wait so files are fully released (VERY IMPORTANT on Windows)\n    time.sleep(3)\n    images = glob.glob(\"images/*.png\")\n    for image in images:\n        try:\n            os.remove(image)\n        except PermissionError:\n            print(f\"Skipping locked file: {image}\")",
         "detail": "main",
         "documentation": {}
     },
@@ -119,7 +127,7 @@
         "kind": 5,
         "importPath": "main",
         "description": "main",
-        "peekOfCode": "video = cv2.VideoCapture(0)\ntime.sleep(1)\nfirst_frame = None\nstatus_list = []\ncount = 1\ndef clean_folder():\n    images = glob.glob(\"images/*.png\")\n    for image in images:\n        os.remove(image)\nwhile True:",
+        "peekOfCode": "video = cv2.VideoCapture(0)\ntime.sleep(1)\nfirst_frame = None\nstatus_list = [0, 0]\ncount = 1\nimage_with_object = None\n# ---------------- CLEAN FOLDER ----------------\ndef clean_folder():\n    print(\"clean folder func started\")\n    # wait so files are fully released (VERY IMPORTANT on Windows)",
         "detail": "main",
         "documentation": {}
     },
@@ -128,7 +136,7 @@
         "kind": 5,
         "importPath": "main",
         "description": "main",
-        "peekOfCode": "first_frame = None\nstatus_list = []\ncount = 1\ndef clean_folder():\n    images = glob.glob(\"images/*.png\")\n    for image in images:\n        os.remove(image)\nwhile True:\n    status = 0\n    check, frame = video.read()",
+        "peekOfCode": "first_frame = None\nstatus_list = [0, 0]\ncount = 1\nimage_with_object = None\n# ---------------- CLEAN FOLDER ----------------\ndef clean_folder():\n    print(\"clean folder func started\")\n    # wait so files are fully released (VERY IMPORTANT on Windows)\n    time.sleep(3)\n    images = glob.glob(\"images/*.png\")",
         "detail": "main",
         "documentation": {}
     },
@@ -137,7 +145,7 @@
         "kind": 5,
         "importPath": "main",
         "description": "main",
-        "peekOfCode": "status_list = []\ncount = 1\ndef clean_folder():\n    images = glob.glob(\"images/*.png\")\n    for image in images:\n        os.remove(image)\nwhile True:\n    status = 0\n    check, frame = video.read()\n    gray_frame = cv2.cvtColor(frame, cv2.COLOR_BGR2GRAY)",
+        "peekOfCode": "status_list = [0, 0]\ncount = 1\nimage_with_object = None\n# ---------------- CLEAN FOLDER ----------------\ndef clean_folder():\n    print(\"clean folder func started\")\n    # wait so files are fully released (VERY IMPORTANT on Windows)\n    time.sleep(3)\n    images = glob.glob(\"images/*.png\")\n    for image in images:",
         "detail": "main",
         "documentation": {}
     },
@@ -146,7 +154,16 @@
         "kind": 5,
         "importPath": "main",
         "description": "main",
-        "peekOfCode": "count = 1\ndef clean_folder():\n    images = glob.glob(\"images/*.png\")\n    for image in images:\n        os.remove(image)\nwhile True:\n    status = 0\n    check, frame = video.read()\n    gray_frame = cv2.cvtColor(frame, cv2.COLOR_BGR2GRAY)\n    gray_frame_gau = cv2.GaussianBlur(gray_frame, (21, 21), 0)",
+        "peekOfCode": "count = 1\nimage_with_object = None\n# ---------------- CLEAN FOLDER ----------------\ndef clean_folder():\n    print(\"clean folder func started\")\n    # wait so files are fully released (VERY IMPORTANT on Windows)\n    time.sleep(3)\n    images = glob.glob(\"images/*.png\")\n    for image in images:\n        try:",
+        "detail": "main",
+        "documentation": {}
+    },
+    {
+        "label": "image_with_object",
+        "kind": 5,
+        "importPath": "main",
+        "description": "main",
+        "peekOfCode": "image_with_object = None\n# ---------------- CLEAN FOLDER ----------------\ndef clean_folder():\n    print(\"clean folder func started\")\n    # wait so files are fully released (VERY IMPORTANT on Windows)\n    time.sleep(3)\n    images = glob.glob(\"images/*.png\")\n    for image in images:\n        try:\n            os.remove(image)",
         "detail": "main",
         "documentation": {}
     }
