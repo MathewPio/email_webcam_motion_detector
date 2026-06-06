@@ -61,6 +61,15 @@
         "documentation": {}
     },
     {
+        "label": "os",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "os",
+        "description": "os",
+        "detail": "os",
+        "documentation": {}
+    },
+    {
         "label": "send_email",
         "kind": 2,
         "importPath": "emailing",
@@ -97,11 +106,20 @@
         "documentation": {}
     },
     {
+        "label": "clean_folder",
+        "kind": 2,
+        "importPath": "main",
+        "description": "main",
+        "peekOfCode": "def clean_folder():\n    images = glob.glob(\"images/*.png\")\n    for image in images:\n        os.remove(image)\nwhile True:\n    status = 0\n    check, frame = video.read()\n    gray_frame = cv2.cvtColor(frame, cv2.COLOR_BGR2GRAY)\n    gray_frame_gau = cv2.GaussianBlur(gray_frame, (21, 21), 0)\n    if first_frame is None:",
+        "detail": "main",
+        "documentation": {}
+    },
+    {
         "label": "video",
         "kind": 5,
         "importPath": "main",
         "description": "main",
-        "peekOfCode": "video = cv2.VideoCapture(0)\ntime.sleep(1)\nfirst_frame = None\nstatus_list = []\ncount = 1\nwhile True:\n    status = 0\n    check, frame = video.read()\n    gray_frame = cv2.cvtColor(frame, cv2.COLOR_BGR2GRAY)\n    gray_frame_gau = cv2.GaussianBlur(gray_frame, (21, 21), 0)",
+        "peekOfCode": "video = cv2.VideoCapture(0)\ntime.sleep(1)\nfirst_frame = None\nstatus_list = []\ncount = 1\ndef clean_folder():\n    images = glob.glob(\"images/*.png\")\n    for image in images:\n        os.remove(image)\nwhile True:",
         "detail": "main",
         "documentation": {}
     },
@@ -110,7 +128,7 @@
         "kind": 5,
         "importPath": "main",
         "description": "main",
-        "peekOfCode": "first_frame = None\nstatus_list = []\ncount = 1\nwhile True:\n    status = 0\n    check, frame = video.read()\n    gray_frame = cv2.cvtColor(frame, cv2.COLOR_BGR2GRAY)\n    gray_frame_gau = cv2.GaussianBlur(gray_frame, (21, 21), 0)\n    if first_frame is None:\n        first_frame = gray_frame_gau",
+        "peekOfCode": "first_frame = None\nstatus_list = []\ncount = 1\ndef clean_folder():\n    images = glob.glob(\"images/*.png\")\n    for image in images:\n        os.remove(image)\nwhile True:\n    status = 0\n    check, frame = video.read()",
         "detail": "main",
         "documentation": {}
     },
@@ -119,7 +137,7 @@
         "kind": 5,
         "importPath": "main",
         "description": "main",
-        "peekOfCode": "status_list = []\ncount = 1\nwhile True:\n    status = 0\n    check, frame = video.read()\n    gray_frame = cv2.cvtColor(frame, cv2.COLOR_BGR2GRAY)\n    gray_frame_gau = cv2.GaussianBlur(gray_frame, (21, 21), 0)\n    if first_frame is None:\n        first_frame = gray_frame_gau\n    delta_frame = cv2.absdiff(first_frame, gray_frame_gau)",
+        "peekOfCode": "status_list = []\ncount = 1\ndef clean_folder():\n    images = glob.glob(\"images/*.png\")\n    for image in images:\n        os.remove(image)\nwhile True:\n    status = 0\n    check, frame = video.read()\n    gray_frame = cv2.cvtColor(frame, cv2.COLOR_BGR2GRAY)",
         "detail": "main",
         "documentation": {}
     },
@@ -128,7 +146,7 @@
         "kind": 5,
         "importPath": "main",
         "description": "main",
-        "peekOfCode": "count = 1\nwhile True:\n    status = 0\n    check, frame = video.read()\n    gray_frame = cv2.cvtColor(frame, cv2.COLOR_BGR2GRAY)\n    gray_frame_gau = cv2.GaussianBlur(gray_frame, (21, 21), 0)\n    if first_frame is None:\n        first_frame = gray_frame_gau\n    delta_frame = cv2.absdiff(first_frame, gray_frame_gau)\n    thresh_frame = cv2.threshold(delta_frame, 60, 255, cv2.THRESH_BINARY)[1]",
+        "peekOfCode": "count = 1\ndef clean_folder():\n    images = glob.glob(\"images/*.png\")\n    for image in images:\n        os.remove(image)\nwhile True:\n    status = 0\n    check, frame = video.read()\n    gray_frame = cv2.cvtColor(frame, cv2.COLOR_BGR2GRAY)\n    gray_frame_gau = cv2.GaussianBlur(gray_frame, (21, 21), 0)",
         "detail": "main",
         "documentation": {}
     }
